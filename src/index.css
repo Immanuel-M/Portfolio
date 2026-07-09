@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  font-family: 'Fraunces', ui-serif, Georgia, serif;
+}
+
+/* iOS Safari's 100vh doesn't reliably account for the dynamic address bar
+   in short landscape viewports; 100dvh fixes it. Written as a fallback
+   cascade (not a Tailwind utility) so browsers without dvh support keep
+   the vh value instead of collapsing to an invalid/zero height. */
+.h-ios-hero {
+  height: 100vh;
+  height: 100dvh;
+}
+
+/* sprocket-hole rail used as a section divider — a nod to the film side */
+.sprocket-rail {
+  background-image: radial-gradient(circle, rgba(233,231,224,0.35) 1.5px, transparent 1.5px);
+  background-size: 14px 14px;
+  background-position: center;
+}
+
+.text-outline {
+  -webkit-text-stroke: 1px rgba(233, 231, 224, 0.5);
+  color: transparent;
+}
+
+::selection {
+  background: #ff5a1f;
+  color: #0b0c0e;
+}
